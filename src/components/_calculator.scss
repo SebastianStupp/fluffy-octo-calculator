@@ -1,0 +1,19 @@
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calculator__output {
+  flex-basis: 100%;
+  border-width: medium;
+  text-align: right;
+  background-color: black;
+  color: coral;
+  font-size: medium;
+}
+
+.calculator__btn {
+  flex-basis: calc(100% / 3);
+  border-width: medium;
+  background-color: coral;
+}
