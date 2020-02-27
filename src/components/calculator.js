@@ -4,26 +4,23 @@ const calculatorEqual = document.querySelector(".btn--equal");
 const calculatorOperators = document.querySelectorAll(".calculator__operator");
 const calculatorAc = document.querySelector(".btn--ac");
 
-function addition(numberOne, numberTwo) {
-  return numberOne + numberTwo;
-}
-function subtract(numberOne, numberTwo) {
-  return numberOne - numberTwo;
-}
-function divdivide(numberOne, numberTwo) {
-  return numberOne / numberTwo;
-}
-function multiply(numberOne, numberTwo) {
-  return numberOne + numberTwo;
+import { addition, subtract, divide, multiply } from "./math.js";
+
+let numberOne = 0;
+let numberTwo = 0;
+
+function handleResultClick() {
+  numberTwo = Number(calculatorOutput.value);
+  calculatorOutput.value = add(numberOne, numberTwo);
+  console.log(
+    "handleResultClick",
+    numberOne,
+    numberTwo,
+    calculatorOutput.value
+  );
 }
 
-const numberOne = Number(calculatorInputs[7].innerText);
-const numberTwo = Number(calculatorInputs[9].innerText);
-
-function handleClick() {
-  calculatorOutput.value = addition(numberOne, numberTwo);
-}
-calculatorEqual.addEventListener("click", handleClick);
+calculatorEqual.addEventListener("click", handleResultClick);
 
 function acClick() {
   calculatorOutput.value = "";
