@@ -32,10 +32,13 @@ function acClick() {
 calculatorAc.addEventListener("click", acClick);
 
 function addInputEventListener(calculatorInput) {
-  calculatorInputs.forEach(addInputEventListener);
+  console.log("addInputEventListener", calculatorInput.innerText);
 
-  function handleCalculatorInputClick() {
-    calculatorInput.addEventListener("click", handleCalculatorInputClick);
+  function handleClickEvent() {
     calculatorOutput.value = calculatorInput.innerText;
   }
+
+  calculatorInput.addEventListener("click", handleClickEvent);
 }
+
+calculatorInputs.forEach(addInputEventListener);
